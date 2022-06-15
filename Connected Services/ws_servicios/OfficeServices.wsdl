@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="OfficeServices" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://212.83.170.202/Inpec/InteliTurnoServices/OfficeServices.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://212.83.170.202/Inpec/InteliTurnoServices/OfficeServices.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://212.83.170.202/Inpec/InteliTurnoServices/OfficeServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/InteliTurnoServices" />
+      <xsd:import schemaLocation="http://212.83.170.202/Inpec/InteliTurnoServices/OfficeServices.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IOfficeServices_GetAllServices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllServices" />
+  </wsdl:message>
+  <wsdl:message name="IOfficeServices_GetAllServices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllServicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOfficeServices_GetAllOffices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOffices" />
+  </wsdl:message>
+  <wsdl:message name="IOfficeServices_GetAllOffices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOfficesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOfficeServices_QueueTurn_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueueTurn" />
+  </wsdl:message>
+  <wsdl:message name="IOfficeServices_QueueTurn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueueTurnResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOfficeServices_ModifyTurn_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyTurn" />
+  </wsdl:message>
+  <wsdl:message name="IOfficeServices_ModifyTurn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyTurnResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOfficeServices_UpdateTurnNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTurnNumber" />
+  </wsdl:message>
+  <wsdl:message name="IOfficeServices_UpdateTurnNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTurnNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOfficeServices_QueryTurnNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryTurnNumber" />
+  </wsdl:message>
+  <wsdl:message name="IOfficeServices_QueryTurnNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryTurnNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOfficeServices_InsertUserIdentity_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserIdentity" />
+  </wsdl:message>
+  <wsdl:message name="IOfficeServices_InsertUserIdentity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserIdentityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOfficeServices_SincronizarDatos_InputMessage">
+    <wsdl:part name="parameters" element="tns:SincronizarDatos" />
+  </wsdl:message>
+  <wsdl:message name="IOfficeServices_SincronizarDatos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SincronizarDatosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOfficeServices_SincronizarRespuestasEncuestas_InputMessage">
+    <wsdl:part name="parameters" element="tns:SincronizarRespuestasEncuestas" />
+  </wsdl:message>
+  <wsdl:message name="IOfficeServices_SincronizarRespuestasEncuestas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SincronizarRespuestasEncuestasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOfficeServices_changePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:changePassword" />
+  </wsdl:message>
+  <wsdl:message name="IOfficeServices_changePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:changePasswordResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IOfficeServices">
+    <wsdl:operation name="GetAllServices">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOfficeServices/GetAllServices" message="tns:IOfficeServices_GetAllServices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOfficeServices/GetAllServicesResponse" message="tns:IOfficeServices_GetAllServices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOffices">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOfficeServices/GetAllOffices" message="tns:IOfficeServices_GetAllOffices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOfficeServices/GetAllOfficesResponse" message="tns:IOfficeServices_GetAllOffices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueueTurn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOfficeServices/QueueTurn" message="tns:IOfficeServices_QueueTurn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOfficeServices/QueueTurnResponse" message="tns:IOfficeServices_QueueTurn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyTurn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOfficeServices/ModifyTurn" message="tns:IOfficeServices_ModifyTurn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOfficeServices/ModifyTurnResponse" message="tns:IOfficeServices_ModifyTurn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTurnNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOfficeServices/UpdateTurnNumber" message="tns:IOfficeServices_UpdateTurnNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOfficeServices/UpdateTurnNumberResponse" message="tns:IOfficeServices_UpdateTurnNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryTurnNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOfficeServices/QueryTurnNumber" message="tns:IOfficeServices_QueryTurnNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOfficeServices/QueryTurnNumberResponse" message="tns:IOfficeServices_QueryTurnNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserIdentity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOfficeServices/InsertUserIdentity" message="tns:IOfficeServices_InsertUserIdentity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOfficeServices/InsertUserIdentityResponse" message="tns:IOfficeServices_InsertUserIdentity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SincronizarDatos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOfficeServices/SincronizarDatos" message="tns:IOfficeServices_SincronizarDatos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOfficeServices/SincronizarDatosResponse" message="tns:IOfficeServices_SincronizarDatos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SincronizarRespuestasEncuestas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOfficeServices/SincronizarRespuestasEncuestas" message="tns:IOfficeServices_SincronizarRespuestasEncuestas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOfficeServices/SincronizarRespuestasEncuestasResponse" message="tns:IOfficeServices_SincronizarRespuestasEncuestas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="changePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOfficeServices/changePassword" message="tns:IOfficeServices_changePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOfficeServices/changePasswordResponse" message="tns:IOfficeServices_changePassword_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="OfficeServices" />
+</wsdl:definitions>

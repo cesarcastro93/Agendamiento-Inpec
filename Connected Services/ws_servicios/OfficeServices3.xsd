@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/InteliTurnoServices" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/InteliTurnoServices" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://212.83.170.202/Inpec/InteliTurnoServices/OfficeServices.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfOfficeLevel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OfficeLevel" nillable="true" type="tns:OfficeLevel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOfficeLevel" nillable="true" type="tns:ArrayOfOfficeLevel" />
+  <xs:complexType name="OfficeLevel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Level" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServicesLevels" nillable="true" type="tns:ArrayOfServiceLevel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OfficeLevel" nillable="true" type="tns:OfficeLevel" />
+  <xs:complexType name="ArrayOfServiceLevel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceLevel" nillable="true" type="tns:ServiceLevel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiceLevel" nillable="true" type="tns:ArrayOfServiceLevel" />
+  <xs:complexType name="ServiceLevel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServicioPadre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceLevel" nillable="true" type="tns:ServiceLevel" />
+  <xs:complexType name="ArrayOfOffice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Office" nillable="true" type="tns:Office" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOffice" nillable="true" type="tns:ArrayOfOffice" />
+  <xs:complexType name="Office">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Services" nillable="true" type="tns:ArrayOfOfficeLevel" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="latitude" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="longitude" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="schedule" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Office" nillable="true" type="tns:Office" />
+  <xs:complexType name="Reservation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMsg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TurnNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Reservation" nillable="true" type="tns:Reservation" />
+  <xs:complexType name="SqlClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sqlInsertUser" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SqlClass" nillable="true" type="tns:SqlClass" />
+  <xs:complexType name="TurnosSincronizar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Actividades" nillable="true" type="tns:ArrayOfActividades" />
+      <xs:element minOccurs="0" name="abandonados" nillable="true" type="tns:ArrayOfOthersTurns" />
+      <xs:element minOccurs="0" name="cerrados" nillable="true" type="tns:ArrayOfClosedTurns" />
+      <xs:element minOccurs="0" name="enAtencion" nillable="true" type="tns:ArrayOfOthersTurns" />
+      <xs:element minOccurs="0" name="llamados" nillable="true" type="tns:ArrayOfOthersTurns" />
+      <xs:element minOccurs="0" name="turns" nillable="true" type="tns:ArrayOfTurn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TurnosSincronizar" nillable="true" type="tns:TurnosSincronizar" />
+  <xs:complexType name="ArrayOfActividades">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Actividades" nillable="true" type="tns:Actividades" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfActividades" nillable="true" type="tns:ArrayOfActividades" />
+  <xs:complexType name="Actividades">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="OfficeId" type="xs:int" />
+      <xs:element minOccurs="0" name="ReasonForSuspensionId" type="xs:int" />
+      <xs:element minOccurs="0" name="SynchronizationDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Synchronized" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TimeActivity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Actividades" nillable="true" type="tns:Actividades" />
+  <xs:complexType name="ArrayOfOthersTurns">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OthersTurns" nillable="true" type="tns:OthersTurns" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOthersTurns" nillable="true" type="tns:ArrayOfOthersTurns" />
+  <xs:complexType name="OthersTurns">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="hora" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="prioridad" type="xs:int" />
+      <xs:element minOccurs="0" name="puesto" type="xs:int" />
+      <xs:element minOccurs="0" name="turno" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OthersTurns" nillable="true" type="tns:OthersTurns" />
+  <xs:complexType name="ArrayOfClosedTurns">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClosedTurns" nillable="true" type="tns:ClosedTurns" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClosedTurns" nillable="true" type="tns:ArrayOfClosedTurns" />
+  <xs:complexType name="ClosedTurns">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="hora" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prioridad" type="xs:int" />
+      <xs:element minOccurs="0" name="puesto" type="xs:int" />
+      <xs:element minOccurs="0" name="turno" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClosedTurns" nillable="true" type="tns:ClosedTurns" />
+  <xs:complexType name="ArrayOfTurn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Turn" nillable="true" type="tns:Turn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTurn" nillable="true" type="tns:ArrayOfTurn" />
+  <xs:complexType name="Turn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="atencion" type="xs:int" />
+      <xs:element minOccurs="0" name="canal" type="xs:int" />
+      <xs:element minOccurs="0" name="consecutivo" type="xs:int" />
+      <xs:element minOccurs="0" name="desplazamiento" type="xs:int" />
+      <xs:element minOccurs="0" name="espera" type="xs:int" />
+      <xs:element minOccurs="0" name="estado" type="xs:int" />
+      <xs:element minOccurs="0" name="generado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="oficina" type="xs:int" />
+      <xs:element minOccurs="0" name="servicioTipoAtencion" type="xs:int" />
+      <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Turn" nillable="true" type="tns:Turn" />
+  <xs:complexType name="TurnosSincronizados">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Actividades" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="abandonados" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="cerrados" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="enAtencion" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="llamados" nillable="true" type="q5:ArrayOfstring" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="turns" nillable="true" type="q6:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TurnosSincronizados" nillable="true" type="tns:TurnosSincronizados" />
+  <xs:complexType name="ArrayOfEncuestasRespuestas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EncuestasRespuestas" nillable="true" type="tns:EncuestasRespuestas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEncuestasRespuestas" nillable="true" type="tns:ArrayOfEncuestasRespuestas" />
+  <xs:complexType name="EncuestasRespuestas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AsesorId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Documento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="OfficeId" type="xs:int" />
+      <xs:element minOccurs="0" name="OpcionId" type="xs:int" />
+      <xs:element minOccurs="0" name="PreguntaId" type="xs:int" />
+      <xs:element minOccurs="0" name="TurnoId" type="xs:int" />
+      <xs:element minOccurs="0" name="Valor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EncuestasRespuestas" nillable="true" type="tns:EncuestasRespuestas" />
+  <xs:complexType name="UserModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NewPassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserModel" nillable="true" type="tns:UserModel" />
+</xs:schema>

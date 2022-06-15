@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ObtenerOficinas">
+        <s:complexType />
+      </s:element>
+      <s:element name="ObtenerOficinasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerOficinasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerServicios">
+        <s:complexType />
+      </s:element>
+      <s:element name="ObtenerServiciosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerServiciosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerHorariosAgenda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sede" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerHorariosAgendaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerHorariosAgendaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertaAgenda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sede" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoServicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Horario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertaAgendaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertaAgendaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaCedula">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaCedulaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidaCedulaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDatosTurnos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDatosTurnosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerDatosTurnosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BorraAgenda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BorraAgendaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BorraAgendaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ObtenerOficinasSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerOficinas" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerOficinasSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerOficinasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerServiciosSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerServicios" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerServiciosSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerServiciosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerHorariosAgendaSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerHorariosAgenda" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerHorariosAgendaSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerHorariosAgendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertaAgendaSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertaAgenda" />
+  </wsdl:message>
+  <wsdl:message name="InsertaAgendaSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertaAgendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidaCedulaSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidaCedula" />
+  </wsdl:message>
+  <wsdl:message name="ValidaCedulaSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidaCedulaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDatosTurnosSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerDatosTurnos" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDatosTurnosSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerDatosTurnosResponse" />
+  </wsdl:message>
+  <wsdl:message name="BorraAgendaSoapIn">
+    <wsdl:part name="parameters" element="tns:BorraAgenda" />
+  </wsdl:message>
+  <wsdl:message name="BorraAgendaSoapOut">
+    <wsdl:part name="parameters" element="tns:BorraAgendaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSAgendaSoap">
+    <wsdl:operation name="ObtenerOficinas">
+      <wsdl:input message="tns:ObtenerOficinasSoapIn" />
+      <wsdl:output message="tns:ObtenerOficinasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerServicios">
+      <wsdl:input message="tns:ObtenerServiciosSoapIn" />
+      <wsdl:output message="tns:ObtenerServiciosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerHorariosAgenda">
+      <wsdl:input message="tns:ObtenerHorariosAgendaSoapIn" />
+      <wsdl:output message="tns:ObtenerHorariosAgendaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertaAgenda">
+      <wsdl:input message="tns:InsertaAgendaSoapIn" />
+      <wsdl:output message="tns:InsertaAgendaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaCedula">
+      <wsdl:input message="tns:ValidaCedulaSoapIn" />
+      <wsdl:output message="tns:ValidaCedulaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosTurnos">
+      <wsdl:input message="tns:ObtenerDatosTurnosSoapIn" />
+      <wsdl:output message="tns:ObtenerDatosTurnosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BorraAgenda">
+      <wsdl:input message="tns:BorraAgendaSoapIn" />
+      <wsdl:output message="tns:BorraAgendaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSAgendaSoap" type="tns:WSAgendaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerOficinas">
+      <soap:operation soapAction="http://tempuri.org/ObtenerOficinas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerServicios">
+      <soap:operation soapAction="http://tempuri.org/ObtenerServicios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerHorariosAgenda">
+      <soap:operation soapAction="http://tempuri.org/ObtenerHorariosAgenda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertaAgenda">
+      <soap:operation soapAction="http://tempuri.org/InsertaAgenda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaCedula">
+      <soap:operation soapAction="http://tempuri.org/ValidaCedula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosTurnos">
+      <soap:operation soapAction="http://tempuri.org/ObtenerDatosTurnos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorraAgenda">
+      <soap:operation soapAction="http://tempuri.org/BorraAgenda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSAgendaSoap12" type="tns:WSAgendaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerOficinas">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerOficinas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerServicios">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerServicios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerHorariosAgenda">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerHorariosAgenda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertaAgenda">
+      <soap12:operation soapAction="http://tempuri.org/InsertaAgenda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaCedula">
+      <soap12:operation soapAction="http://tempuri.org/ValidaCedula" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosTurnos">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerDatosTurnos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorraAgenda">
+      <soap12:operation soapAction="http://tempuri.org/BorraAgenda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSAgenda">
+    <wsdl:port name="WSAgendaSoap" binding="tns:WSAgendaSoap">
+      <soap:address location="http://192.168.51.113/WSAgendamiento/WSAgenda.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSAgendaSoap12" binding="tns:WSAgendaSoap12">
+      <soap12:address location="http://192.168.51.113/WSAgendamiento/WSAgenda.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

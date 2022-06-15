@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PruebaINPECModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'PruebaINPEC.dbo.Ciudad' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Ciudad">
+    <Key>
+      <PropertyRef Name="Id_Ciudad" />
+      <PropertyRef Name="NombreCiudad" />
+    </Key>
+    <Property Name="Id_Ciudad" Type="int" Nullable="false" />
+    <Property Name="NombreCiudad" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'PruebaINPEC.dbo.Sede' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Sede">
+    <Key>
+      <PropertyRef Name="Id_Sede" />
+      <PropertyRef Name="NombreSede" />
+    </Key>
+    <Property Name="Id_Sede" Type="int" Nullable="false" />
+    <Property Name="NombreSede" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'PruebaINPEC.dbo.Servicio' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Servicio">
+    <Key>
+      <PropertyRef Name="Id_servicio" />
+      <PropertyRef Name="NombreServicio" />
+    </Key>
+    <Property Name="Id_servicio" Type="int" Nullable="false" />
+    <Property Name="NombreServicio" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="PruebaINPECModelStoreContainer">
+    <EntitySet Name="Ciudad" EntityType="Self.Ciudad" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Ciudad].[Id_Ciudad] AS [Id_Ciudad], 
+    [Ciudad].[NombreCiudad] AS [NombreCiudad]
+    FROM [dbo].[Ciudad] AS [Ciudad]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Sede" EntityType="Self.Sede" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Sede].[Id_Sede] AS [Id_Sede], 
+    [Sede].[NombreSede] AS [NombreSede]
+    FROM [dbo].[Sede] AS [Sede]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Servicio" EntityType="Self.Servicio" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Servicio].[Id_servicio] AS [Id_servicio], 
+    [Servicio].[NombreServicio] AS [NombreServicio]
+    FROM [dbo].[Servicio] AS [Servicio]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

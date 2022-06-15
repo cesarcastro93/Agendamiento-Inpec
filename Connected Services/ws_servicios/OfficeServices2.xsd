@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://212.83.170.202/Inpec/InteliTurnoServices/OfficeServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/InteliTurnoServices" />
+  <xs:import schemaLocation="http://212.83.170.202/Inpec/InteliTurnoServices/OfficeServices.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetAllServices">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllServicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/InteliTurnoServices" minOccurs="0" name="GetAllServicesResult" nillable="true" type="q1:ArrayOfOfficeLevel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllOffices">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllOfficesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/InteliTurnoServices" minOccurs="0" name="GetAllOfficesResult" nillable="true" type="q2:ArrayOfOffice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueTurn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OfficeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ServiceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lati" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="longi" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueTurnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/InteliTurnoServices" minOccurs="0" name="QueueTurnResult" nillable="true" type="q3:Reservation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyTurn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OfficeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ReserveId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Action" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyTurnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/InteliTurnoServices" minOccurs="0" name="ModifyTurnResult" nillable="true" type="q4:Reservation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTurnNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OfficeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ReserveId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TurnNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTurnNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateTurnNumberResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryTurnNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OfficeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ReserveId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryTurnNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/InteliTurnoServices" minOccurs="0" name="QueryTurnNumberResult" nillable="true" type="q5:Reservation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUserIdentity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/InteliTurnoServices" minOccurs="0" name="sqlObj" nillable="true" type="q6:SqlClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUserIdentityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertUserIdentityResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SincronizarDatos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/InteliTurnoServices" minOccurs="0" name="JSonASincronizar" nillable="true" type="q7:TurnosSincronizar" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SincronizarDatosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/InteliTurnoServices" minOccurs="0" name="SincronizarDatosResult" nillable="true" type="q8:TurnosSincronizados" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SincronizarRespuestasEncuestas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/InteliTurnoServices" minOccurs="0" name="Respuestas" nillable="true" type="q9:ArrayOfEncuestasRespuestas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SincronizarRespuestasEncuestasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SincronizarRespuestasEncuestasResult" nillable="true" type="q10:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="changePassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/InteliTurnoServices" minOccurs="0" name="User" nillable="true" type="q11:UserModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="changePasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="changePasswordResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

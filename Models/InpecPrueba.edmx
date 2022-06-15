@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PruebaINPECModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'PruebaINPEC.dbo.Ciudad' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Ciudad">
+          <Key>
+            <PropertyRef Name="Id_Ciudad" />
+            <PropertyRef Name="NombreCiudad" />
+          </Key>
+          <Property Name="Id_Ciudad" Type="int" Nullable="false" />
+          <Property Name="NombreCiudad" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'PruebaINPEC.dbo.Sede' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Sede">
+          <Key>
+            <PropertyRef Name="Id_Sede" />
+            <PropertyRef Name="NombreSede" />
+          </Key>
+          <Property Name="Id_Sede" Type="int" Nullable="false" />
+          <Property Name="NombreSede" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'PruebaINPEC.dbo.Servicio' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Servicio">
+          <Key>
+            <PropertyRef Name="Id_servicio" />
+            <PropertyRef Name="NombreServicio" />
+          </Key>
+          <Property Name="Id_servicio" Type="int" Nullable="false" />
+          <Property Name="NombreServicio" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PruebaINPECModelStoreContainer">
+          <EntitySet Name="Ciudad" EntityType="Self.Ciudad" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Ciudad].[Id_Ciudad] AS [Id_Ciudad], 
+    [Ciudad].[NombreCiudad] AS [NombreCiudad]
+    FROM [dbo].[Ciudad] AS [Ciudad]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Sede" EntityType="Self.Sede" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Sede].[Id_Sede] AS [Id_Sede], 
+    [Sede].[NombreSede] AS [NombreSede]
+    FROM [dbo].[Sede] AS [Sede]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Servicio" EntityType="Self.Servicio" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Servicio].[Id_servicio] AS [Id_servicio], 
+    [Servicio].[NombreServicio] AS [NombreServicio]
+    FROM [dbo].[Servicio] AS [Servicio]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PruebaINPECModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Ciudad">
+          <Key>
+            <PropertyRef Name="Id_Ciudad" />
+            <PropertyRef Name="NombreCiudad" />
+          </Key>
+          <Property Name="Id_Ciudad" Type="Int32" Nullable="false" />
+          <Property Name="NombreCiudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sede">
+          <Key>
+            <PropertyRef Name="Id_Sede" />
+            <PropertyRef Name="NombreSede" />
+          </Key>
+          <Property Name="Id_Sede" Type="Int32" Nullable="false" />
+          <Property Name="NombreSede" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Servicio">
+          <Key>
+            <PropertyRef Name="Id_servicio" />
+            <PropertyRef Name="NombreServicio" />
+          </Key>
+          <Property Name="Id_servicio" Type="Int32" Nullable="false" />
+          <Property Name="NombreServicio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PruebaINPECEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Ciudad" EntityType="Self.Ciudad" />
+          <EntitySet Name="Sede" EntityType="Self.Sede" />
+          <EntitySet Name="Servicio" EntityType="Self.Servicio" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PruebaINPECModelStoreContainer" CdmEntityContainer="PruebaINPECEntities">
+          <EntitySetMapping Name="Ciudad">
+            <EntityTypeMapping TypeName="PruebaINPECModel.Ciudad">
+              <MappingFragment StoreEntitySet="Ciudad">
+                <ScalarProperty Name="Id_Ciudad" ColumnName="Id_Ciudad" />
+                <ScalarProperty Name="NombreCiudad" ColumnName="NombreCiudad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sede">
+            <EntityTypeMapping TypeName="PruebaINPECModel.Sede">
+              <MappingFragment StoreEntitySet="Sede">
+                <ScalarProperty Name="Id_Sede" ColumnName="Id_Sede" />
+                <ScalarProperty Name="NombreSede" ColumnName="NombreSede" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Servicio">
+            <EntityTypeMapping TypeName="PruebaINPECModel.Servicio">
+              <MappingFragment StoreEntitySet="Servicio">
+                <ScalarProperty Name="Id_servicio" ColumnName="Id_servicio" />
+                <ScalarProperty Name="NombreServicio" ColumnName="NombreServicio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

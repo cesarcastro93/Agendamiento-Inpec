@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PruebaINPECModelStoreContainer" CdmEntityContainer="PruebaINPECEntities">
+    <EntitySetMapping Name="Ciudad">
+      <EntityTypeMapping TypeName="PruebaINPECModel.Ciudad">
+        <MappingFragment StoreEntitySet="Ciudad">
+          <ScalarProperty Name="Id_Ciudad" ColumnName="Id_Ciudad" />
+          <ScalarProperty Name="NombreCiudad" ColumnName="NombreCiudad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sede">
+      <EntityTypeMapping TypeName="PruebaINPECModel.Sede">
+        <MappingFragment StoreEntitySet="Sede">
+          <ScalarProperty Name="Id_Sede" ColumnName="Id_Sede" />
+          <ScalarProperty Name="NombreSede" ColumnName="NombreSede" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Servicio">
+      <EntityTypeMapping TypeName="PruebaINPECModel.Servicio">
+        <MappingFragment StoreEntitySet="Servicio">
+          <ScalarProperty Name="Id_servicio" ColumnName="Id_servicio" />
+          <ScalarProperty Name="NombreServicio" ColumnName="NombreServicio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

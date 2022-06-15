@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5e7af723-d679-43eb-a867-a1b6416a37d4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://212.83.170.202/Inpec/InteliTurnoServices/OfficeServices.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="OfficeServices.xsd" MetadataType="Schema" ID="30b05691-8152-42d8-aacb-2326356fd3d0" SourceId="1" SourceUrl="http://212.83.170.202/Inpec/InteliTurnoServices/OfficeServices.svc?xsd=xsd1" />
+    <MetadataFile FileName="OfficeServices1.xsd" MetadataType="Schema" ID="a0f40de5-4214-4882-ab4f-2a9799ed855e" SourceId="1" SourceUrl="http://212.83.170.202/Inpec/InteliTurnoServices/OfficeServices.svc?xsd=xsd3" />
+    <MetadataFile FileName="OfficeServices2.xsd" MetadataType="Schema" ID="cd652add-ee9f-48f2-a70b-3c25c66d8970" SourceId="1" SourceUrl="http://212.83.170.202/Inpec/InteliTurnoServices/OfficeServices.svc?xsd=xsd0" />
+    <MetadataFile FileName="OfficeServices.wsdl" MetadataType="Wsdl" ID="89266b4d-697c-4166-8bbc-9f10adf448f9" SourceId="1" SourceUrl="http://212.83.170.202/Inpec/InteliTurnoServices/OfficeServices.svc?wsdl" />
+    <MetadataFile FileName="OfficeServices3.xsd" MetadataType="Schema" ID="ad7f4232-bb15-4953-9ef7-8ee188140051" SourceId="1" SourceUrl="http://212.83.170.202/Inpec/InteliTurnoServices/OfficeServices.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
